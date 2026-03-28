@@ -23,10 +23,10 @@ export default function LayersSection() {
   const y = useTransform(scrollYProgress, [0, 0.6], [100, 0])
 
   return (
-    <section ref={ref} className="relative h-[200vh] bg-neutral-100">
+    <section ref={ref} className="relative h-[300vh] bg-neutral-100">
       {/* Sticky container */}
-      <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden">
-        <div className="z-10 mb-10 text-center">
+      <div className="sticky top-0 flex min-h-screen flex-col items-center justify-start overflow-hidden pt-10 sm:justify-center sm:pt-20">
+        <div className="z-10 mx-auto mb-10 w-[95%] text-center">
           <FadeIn>
             <h1 className="heading-1">
               Built in Layers. <br /> Defined by Precision.
@@ -34,7 +34,7 @@ export default function LayersSection() {
           </FadeIn>
           <SectionLabel
             label="Advanced glass systems for modern construction"
-            className="mx-auto mt-4 w-max text-xl tracking-widest"
+            className="mx-auto mt-4 text-center text-xl tracking-widest"
           />
 
           <div className="mt-6">

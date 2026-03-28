@@ -12,17 +12,28 @@ export default function SectionLabel({
   className = "",
   color = "black",
 }: SectionLabelProps) {
+  const [first, ...rest] = label.trim().split(" ")
+  const restText = rest.join(" ")
+
   return (
     <FadeIn delay={0.2}>
       <div
         style={{ fontFamily: "var(--font-space-grotesk)" }}
-        className={cn("relative my-4 items-start gap-1 text-lg", className)}
+        className={cn(
+          "relative my-4 items-baseline gap-1.5 text-lg",
+          className
+        )}
       >
-        <span className={`text-${color}`}>{label}</span>
-        <div
-          style={{ background: color }}
-          className={`h-[2px] w-10 bg-${color}`}
-        />
+        <span className="relative mr-2">
+          <span className={`text-${color}`}>{first}</span>
+          <span
+            style={{ background: color }}
+            className={`absolute -bottom-1 left-0 h-[2.5px] w-full max-w-18 bg-${color}`}
+          />
+        </span>
+        {restText && (
+          <span className={`text-${color} shrink-0`}>{restText}</span>
+        )}
       </div>
     </FadeIn>
   )

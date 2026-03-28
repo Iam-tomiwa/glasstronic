@@ -167,8 +167,9 @@ html.lenis body {
 .heading-1 {
   font-weight: 500;
   font-style: Medium;
-  font-size: 60px;
   line-height: 100%;
   letter-spacing: -1.9px;
   margin-bottom: 1rem;
+
+  @apply text-4xl sm:text-6xl;
 }
