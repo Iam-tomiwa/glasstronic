@@ -1,31 +1,40 @@
 import FadeIn from "@/components/animations/fade-in"
 import SectionLabel from "@/components/section-label"
-import { BarChart3, Factory, ShieldCheck, DraftingCompass } from "lucide-react"
+import Image from "next/image"
 
 export const features = [
   {
     title: "Advanced Processing Technology",
     description:
       "State-of-the-art machinery enables accurate cutting, shaping, and finishing of glass to meet complex design and engineering requirements.",
-    icon: BarChart3,
+    icon: <Image src="/icons/chart.svg" alt="chart" width={24} height={24} />,
   },
   {
     title: "Local Manufacturing Advantage",
     description:
       "By producing locally, we reduce lead times, lower costs, and ensure consistent availability for projects across Nigeria.",
-    icon: Factory,
+    icon: <Image src="/icons/house.svg" alt="factory" width={24} height={24} />,
   },
   {
     title: "Utmost Quality You Can Trust",
     description:
       "Every glass unit is processed with strict quality control to meet international standards for strength, safety, and durability.",
-    icon: ShieldCheck,
+    icon: (
+      <Image
+        src="/icons/presentation.svg"
+        alt="shield"
+        width={24}
+        height={24}
+      />
+    ),
   },
   {
     title: "Custom Engineering Solutions",
     description:
       "We collaborate with architects, contractors, and developers to deliver bespoke glass solutions for unique and technically demanding projects.",
-    icon: DraftingCompass,
+    icon: (
+      <Image src="/icons/house-2.svg" alt="house-2" width={24} height={24} />
+    ),
   },
 ]
 
@@ -47,8 +56,6 @@ export default function WhyGlassTronic() {
         {/* Grid */}
         <div className="grid gap-6 md:grid-cols-2">
           {features.map((feature, index) => {
-            const Icon = feature.icon
-
             return (
               <FadeIn
                 className="h-full border border-[#BABABA] bg-white p-4 transition"
@@ -58,7 +65,7 @@ export default function WhyGlassTronic() {
                 <>
                   {/* Icon */}
                   <div className="mb-4 flex h-10 w-10 items-center justify-center border border-gray-200">
-                    <Icon className="h-5 w-5 text-gray-700" />
+                    {feature.icon}
                   </div>
 
                   {/* Title */}
