@@ -54,7 +54,7 @@ export default function WhyGlassTronic() {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
           {features.map((feature, index) => {
             return (
               <FadeIn

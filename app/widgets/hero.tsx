@@ -76,7 +76,7 @@ export default function HeroSection() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative h-[calc(100vh-100px)] min-h-[600px] overflow-hidden">
+      <section className="relative flex h-[calc(100vh-100px)] min-h-[600px] flex-col justify-center overflow-hidden">
         {/* Slides */}
         <AnimatePresence initial={false}>
           <motion.div
@@ -101,40 +101,38 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/55" />
 
         {/* Content */}
-        <div className="relative z-10 flex h-full flex-col justify-end pb-20 md:pb-24">
-          <div className="container text-white">
-            <motion.h1
-              custom={0}
-              variants={contentVariants}
-              initial="hidden"
-              animate="visible"
-              className="mb-5 max-w-lg text-4xl leading-[1.1] font-medium sm:text-5xl lg:text-[3.5rem]"
-            >
-              Engineered Glass for Modern Construction
-            </motion.h1>
+        <div className="z-10 container py-6 text-white md:py-10">
+          <motion.h1
+            custom={0}
+            variants={contentVariants}
+            initial="hidden"
+            animate="visible"
+            className="mb-5 max-w-lg text-4xl leading-[1.1] font-medium sm:text-5xl lg:text-[3.5rem]"
+          >
+            Engineered Glass for Modern Construction
+          </motion.h1>
 
-            <motion.p
-              custom={1}
-              variants={contentVariants}
-              initial="hidden"
-              animate="visible"
-              className="mb-8 max-w-md leading-relaxed"
-            >
-              At Glasstronic Technologies Limited, we combine cutting-edge
-              technology with precision craftsmanship to deliver
-              high-performance glass solutions for today&apos;s most demanding
-              architectural and construction projects.
-            </motion.p>
+          <motion.p
+            custom={1}
+            variants={contentVariants}
+            initial="hidden"
+            animate="visible"
+            className="mb-8 max-w-md leading-relaxed"
+          >
+            At Glasstronic Technologies Limited, we combine cutting-edge
+            technology with precision craftsmanship to deliver high-performance
+            glass solutions for today&apos;s most demanding architectural and
+            construction projects.
+          </motion.p>
 
-            <motion.div
-              custom={2}
-              variants={contentVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <Button>REQUEST A QUOTE</Button>
-            </motion.div>
-          </div>
+          <motion.div
+            custom={2}
+            variants={contentVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <Button>REQUEST A QUOTE</Button>
+          </motion.div>
         </div>
 
         {/* Dots */}
@@ -158,7 +156,7 @@ export default function HeroSection() {
       {/* ── Stats Bar ── */}
       <section className="bg-secondary">
         <div className="container">
-          <div className="flex flex-wrap divide-y py-8 text-center text-white sm:divide-x sm:divide-y-0 lg:py-16">
+          <div className="flex flex-wrap divide-y py-8 text-center text-white sm:divide-x sm:divide-y-0 lg:flex-nowrap lg:py-16">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
@@ -168,9 +166,6 @@ export default function HeroSection() {
                 transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
                 className={cn(
                   "flex grow flex-col justify-center px-6 py-8 lg:py-0",
-                  // "border-white"
-                  // i < stats.length - 1 && "border-b lg:border-r lg:border-b-0",
-                  // i < 2 && "sm:border-r sm:border-b-0",
                   i === 1 && "sm:border-r-0 lg:border-r"
                 )}
               >
