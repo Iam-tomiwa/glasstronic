@@ -22,7 +22,7 @@ export default function AboutSection() {
                 Shaping the future with Specialist Glass Products
               </h2>
             </FadeIn>
-            <SectionLabel label="About Us" />
+            <SectionLabel className="uppercase" label="About Us" />
 
             <div className="space-y-6">
               <TextAnim
