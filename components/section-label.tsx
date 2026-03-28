@@ -20,7 +20,7 @@ export default function SectionLabel({
       <div
         style={{ fontFamily: "var(--font-space-grotesk)" }}
         className={cn(
-          "relative my-4 items-baseline gap-1.5 text-lg",
+          "relative my-4 items-baseline gap-1.5 sm:text-lg",
           className
         )}
       >

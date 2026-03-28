@@ -19,8 +19,8 @@ const services = [
   { title: "Glass Sealing", image: "/images/services.png" },
 ]
 
-// Left/Right edge of the max-w-7xl container (80rem = 1280px, px-6 = 1.5rem)
-const CONTAINER_SIDE_PADDING = "max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))"
+// Left/Right edge of the 1400px container (px-6 = 1.5rem)
+const CONTAINER_SIDE_PADDING = "max(1.5rem, calc((100vw - 1400px) / 2))"
 
 export default function ServicesCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: false })
@@ -40,7 +40,7 @@ export default function ServicesCarousel() {
   return (
     <section className="overflow-hidden bg-white py-20" id="services">
       {/* Header */}
-      <div className="mx-auto mb-14 max-w-7xl px-6 text-center">
+      <div className="mx-auto mb-14 max-w-[1400px] px-6 text-center">
         <FadeIn>
           <h2 className="heading-1">
             Complete Glass
@@ -60,13 +60,18 @@ export default function ServicesCarousel() {
             className="flex gap-4 md:gap-5"
             style={{
               paddingLeft: CONTAINER_SIDE_PADDING,
-              paddingRight: CONTAINER_SIDE_PADDING,
             }}
           >
             {services.map((service, index) => (
               <div
                 key={index}
                 className="min-w-0 flex-[0_0_78vw] border sm:flex-[0_0_52vw] md:flex-[0_0_38vw] lg:flex-[0_0_28vw] xl:flex-[0_0_25vw]"
+                style={{
+                  marginRight:
+                    index === services.length - 1
+                      ? CONTAINER_SIDE_PADDING
+                      : undefined,
+                }}
               >
                 {/* Card */}
                 <div className="relative aspect-2/3 overflow-hidden">
@@ -95,7 +100,7 @@ export default function ServicesCarousel() {
         </div>
 
         {/* Controls */}
-        <div className="mx-auto mt-8 flex max-w-7xl items-center gap-5 px-6">
+        <div className="container flex items-center gap-5 pt-8">
           <div className="flex shrink-0 gap-3">
             <button
               onClick={scrollPrev}
@@ -114,9 +119,9 @@ export default function ServicesCarousel() {
           </div>
 
           {/* Progress track */}
-          <div className="relative h-[3px] flex-1 bg-gray-200">
+          <div className="relative h-[3px] max-w-[600px] flex-1 bg-gray-200">
             <div
-              className="absolute inset-y-0 left-0 bg-green-900 transition-[width] duration-300 ease-out"
+              className="absolute inset-y-0 left-0 bg-green-900"
               style={{ width: `${progress * 100}%` }}
             />
           </div>
