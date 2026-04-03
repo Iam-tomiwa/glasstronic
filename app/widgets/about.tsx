@@ -2,24 +2,31 @@
 
 import FadeIn from "@/components/animations/fade-in"
 import TextAnim from "@/components/animations/text-anim"
-import GlassCube from "@/components/glass-cube"
 import SectionLabel from "@/components/section-label"
+import Image from "next/image"
 
 export default function AboutSection() {
   return (
     <section id="about" className="bg-white py-24 md:py-32">
-      <div className="container">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24">
-          {/* Left: 3D Cube */}
-          <FadeIn delay={0.2} className="relative order-2 lg:order-1">
-            <GlassCube />
-          </FadeIn>
+      <div className="mx-auto w-[95%] max-w-[1100px]">
+        <div className="flex flex-col items-center gap-16 sm:flex-row">
+          <div className="min-w-[40%]">
+            <FadeIn delay={0.2} className="relative order-2 lg:order-1">
+              <Image
+                src={"/images/about-us.png"}
+                width={500}
+                height={500}
+                alt="About Us"
+                className="aspect-2.5/3 w-full"
+              />
+            </FadeIn>
+          </div>
 
           {/* Right: Content */}
-          <div className="order-1 lg:order-2">
+          <div className="lg:order- order-1 max-w-[520px]">
             <FadeIn delay={0.1}>
-              <h2 className="heading-1 text-primary">
-                Shaping the future with Specialist Glass Products
+              <h2 className="heading-2 text-primary">
+                Excellence through glass innovation
               </h2>
             </FadeIn>
             <SectionLabel className="uppercase" label="About Us" />
@@ -27,8 +34,9 @@ export default function AboutSection() {
             <div className="space-y-6">
               <TextAnim
                 text={[
-                  "Welcome to Glasstronic Technologies Limited, where innovation meets precision engineering. As a forward-thinking glass processing company, we go beyond manufacturing, we deliver advanced solutions that shape modern architecture.",
-                  "Our mission is to provide high-performance glass systems that not only meet technical demands but elevate the design and functionality of every space. By combining cutting-edge machinery with expert craftsmanship, we create glass solutions tailored to today's evolving construction needs.",
+                  "We’re driven by a passion for excellence, combining precision craftsmanship with advanced technology to create products that enhance spaces with safety, beauty, and durability. Our operations is an unwavering commitment to integrity, transparency and accountability.",
+                  "We place our clients at the centre of everything we do, ensuring that every solution meets their unique needs and maintain the highest standards of service and reliability.",
+                  "With a vision to become the definitive choice for glass processing in Nigeria and across Africa, we push the boundaries of innovation, transforming everyday spaces into extraordinary experiences.",
                 ]}
                 className="text-base leading-relaxed text-[#0B4C3E]/70 md:text-[17px]"
                 color="#0B4C3E"

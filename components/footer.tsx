@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-100 px-6 pt-0 pb-12">
+    <footer className="bg-neutral-100 pt-0 pb-12">
       {/* Background Watermark */}
       <div
         className="pointer-events-none -mb-8 w-full overflow-hidden select-none"

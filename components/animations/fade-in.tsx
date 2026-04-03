@@ -1,7 +1,7 @@
 "use client"
 
-import { ReactNode, useRef } from "react"
-import { motion, useInView, Variants } from "framer-motion"
+import { ReactNode, useState } from "react"
+import { motion, Variants } from "framer-motion"
 
 interface FadeInProps {
   children: ReactNode
@@ -36,12 +36,7 @@ const FadeIn = ({
   stagger = false,
   staggerDelay = 0.4,
 }: FadeInProps) => {
-  const ref = useRef<HTMLDivElement>(null)
-
-  const isInView = useInView(ref, {
-    margin: "-20% 0px", // similar to "top 80%"
-    once: false, // allows reverse on scroll out
-  })
+  const [hasEntered, setHasEntered] = useState(false)
 
   const offset = getDirectionOffset(direction)
 
@@ -75,11 +70,20 @@ const FadeIn = ({
 
   return (
     <motion.div
-      ref={ref}
       className={className}
       variants={stagger ? containerVariants : undefined}
       initial="hidden"
-      animate={isInView ? "show" : "hidden"}
+      animate={hasEntered ? "show" : "hidden"}
+      viewport={{
+        margin: "-10% 0px",
+        once: false,
+      }}
+      onViewportEnter={() => setHasEntered(true)}
+      onViewportLeave={(entry) => {
+        if (entry && entry.boundingClientRect.top > window.innerHeight) {
+          setHasEntered(false)
+        }
+      }}
       transition={
         !stagger ? { delay, duration: 1, ease: "easeOut" } : undefined
       }

@@ -4,36 +4,64 @@ import Image from "next/image"
 
 export const features = [
   {
-    title: "Advanced Processing Technology",
+    title: "Excellence",
     description:
-      "State-of-the-art machinery enables accurate cutting, shaping, and finishing of glass to meet complex design and engineering requirements.",
-    icon: <Image src="/icons/chart.svg" alt="chart" width={24} height={24} />,
+      "Uncompromising commitment to superior quality through precision and craftsmanship.",
+    icon: (
+      <Image src="/icons/chart.svg" alt="excellence" width={24} height={24} />
+    ),
   },
   {
-    title: "Local Manufacturing Advantage",
+    title: "Innovation",
     description:
-      "By producing locally, we reduce lead times, lower costs, and ensure consistent availability for projects across Nigeria.",
-    icon: <Image src="/icons/house.svg" alt="factory" width={24} height={24} />,
+      "Embracing advanced technology and forward-thinking to continuously improve.",
+    icon: (
+      <Image src="/icons/house.svg" alt="innovation" width={24} height={24} />
+    ),
   },
   {
-    title: "Utmost Quality You Can Trust",
+    title: "Integrity",
     description:
-      "Every glass unit is processed with strict quality control to meet international standards for strength, safety, and durability.",
+      "We thrive by conducting business with honesty, transparency, and accountability.",
     icon: (
       <Image
         src="/icons/presentation.svg"
-        alt="shield"
+        alt="integrity"
         width={24}
         height={24}
       />
     ),
   },
   {
-    title: "Custom Engineering Solutions",
+    title: "Collaboration",
     description:
-      "We collaborate with architects, contractors, and developers to deliver bespoke glass solutions for unique and technically demanding projects.",
+      "Teamwork gets the work done and utilize it to achieve exceptional results.",
     icon: (
-      <Image src="/icons/house-2.svg" alt="house-2" width={24} height={24} />
+      <Image
+        src="/icons/chart.svg"
+        alt="collaboration"
+        width={24}
+        height={24}
+      />
+    ),
+  },
+  {
+    title: "Safety & Reliability",
+    description:
+      "Prioritizing safety and durability in every product and process.",
+    icon: <Image src="/icons/house.svg" alt="safety" width={24} height={24} />,
+  },
+  {
+    title: "Customer Commitment",
+    description:
+      "Placing our clients at the center of everything we do. We are committed.",
+    icon: (
+      <Image
+        src="/icons/house-2.svg"
+        alt="customer commitment"
+        width={24}
+        height={24}
+      />
     ),
   },
 ]
@@ -41,11 +69,11 @@ export const features = [
 export default function WhyGlassTronic() {
   return (
     <section className="bg-accent py-20">
-      <div className="mx-auto w-[95%] max-w-5xl">
+      <div className="mx-auto w-[95%] max-w-[1200px]">
         {/* Header */}
         <div className="mb-12">
           <FadeIn>
-            <h2 className="heading-1 text-primary">Why Glasstronic?</h2>
+            <h2 className="heading-2 text-primary">Why Glasstronic?</h2>
           </FadeIn>
           <SectionLabel
             label="Core Value Preposition"
@@ -54,7 +82,7 @@ export default function WhyGlassTronic() {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
           {features.map((feature, index) => {
             return (
               <FadeIn

@@ -2,16 +2,18 @@
 
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
-import { motion, AnimatePresence, type Variants } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import CountUp from "@/components/animations/count-text"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 const slides = [
-  "/images/hero-bg.png",
-  "/images/services.png",
-  "/images/hero-bg.png",
-  "/images/services.png",
+  "/images/hero-1.png",
+  "/images/hero-2.png",
+  "/images/hero-3.png",
+  "/images/hero-4.png",
+  "/images/hero-5.png",
 ]
 
 const stats = [
@@ -74,87 +76,89 @@ export default function HeroSection() {
   }
 
   return (
-    <>
-      {/* ── Hero ── */}
-      <section className="relative flex h-[calc(100vh-100px)] min-h-[600px] flex-col justify-center overflow-hidden">
+    <div className="mx-auto w-[95%] bg-background py-4 md:py-6">
+      {/* ── Hero Box ── */}
+      <section className="relative flex h-[85vh] min-h-[600px] flex-col justify-center overflow-hidden rounded-xl">
         {/* Slides */}
-        <AnimatePresence initial={false}>
-          <motion.div
-            key={current}
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-          >
-            <Image
-              src={slides[current]}
-              alt={`Hero slide ${current + 1}`}
-              fill
-              priority={current === 0}
-              className="object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/55" />
-
-        {/* Content */}
-        <div className="z-10 container py-6 text-white md:py-10">
-          <motion.h1
-            custom={0}
-            variants={contentVariants}
-            initial="hidden"
-            animate="visible"
-            className="mb-5 max-w-lg text-4xl leading-[1.1] font-medium sm:text-5xl lg:text-[3.5rem]"
-          >
-            Engineered Glass for Modern Construction
-          </motion.h1>
-
-          <motion.p
-            custom={1}
-            variants={contentVariants}
-            initial="hidden"
-            animate="visible"
-            className="mb-8 max-w-md leading-relaxed"
-          >
-            At Glasstronic Technologies Limited, we combine cutting-edge
-            technology with precision craftsmanship to deliver high-performance
-            glass solutions for today&apos;s most demanding architectural and
-            construction projects.
-          </motion.p>
-
-          <motion.div
-            custom={2}
-            variants={contentVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <Button>REQUEST A QUOTE</Button>
-          </motion.div>
+        <div className="absolute inset-0">
+          {slides.map((src, i) => (
+            <motion.div
+              key={src}
+              className="absolute inset-0"
+              initial={false}
+              animate={{ opacity: i === current ? 1 : 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+            >
+              <Image
+                src={src}
+                alt={`Hero slide ${i + 1}`}
+                fill
+                priority={i === 0}
+                className="object-cover"
+                sizes="100vw"
+              />
+            </motion.div>
+          ))}
         </div>
 
-        {/* Dots */}
-        <div className="absolute bottom-7 left-0 z-10 w-full">
-          <div className="container flex items-center gap-2">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => handleDotClick(i)}
-                aria-label={`Go to slide ${i + 1}`}
-                className={cn(
-                  "h-[6px] cursor-pointer rounded-full transition-all duration-400",
-                  i === current ? "w-7 bg-white" : "w-[6px] bg-white/45"
-                )}
-              />
-            ))}
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/45" />
+
+        {/* Content Container */}
+        <div className="z-10 container flex grow flex-col justify-end pb-30 text-white">
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-6 lg:gap-20">
+            {/* Left side: Heading */}
+            <motion.div
+              custom={0}
+              variants={contentVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <h1 className="heading-1 max-w-[570px]">
+                Engineered Glass for Modern Construction
+              </h1>
+              <div className="absolute bottom-8 flex items-center gap-1 pt-4 sm:static">
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => handleDotClick(i)}
+                    aria-label={`Go to slide ${i + 1}`}
+                    className={cn(
+                      "h-[10px] cursor-pointer rounded-full transition-all duration-400",
+                      i === current ? "w-10 bg-white" : "w-2.5 bg-white/30"
+                    )}
+                  />
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right side: Description & CTA */}
+            <motion.div
+              custom={1}
+              variants={contentVariants}
+              initial="hidden"
+              animate="visible"
+              className="max-w-[580px] lg:ml-auto"
+            >
+              <p className="mb-6 text-lg leading-relaxed text-white/90 sm:pt-2 md:text-2xl">
+                At Glasstronic Technologies Limited, we combine cutting-edge
+                technology with precision craftsmanship to deliver glass
+                solutions for a variety of projects.
+              </p>
+              <Button
+                size="lg"
+                asChild
+                className="bg-white px-10 text-[10px] font-bold tracking-[0.2em] text-black hover:bg-primary hover:text-white"
+              >
+                <Link href="/contact">CONTACT US</Link>
+              </Button>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── Stats Bar ── */}
-      <section className="bg-secondary">
+      {/* ── Stats Box ── */}
+      <section className="mt-4 rounded-xl bg-secondary">
         <div className="container">
           <div className="flex flex-wrap divide-y py-8 text-center text-white sm:divide-x sm:divide-y-0 lg:flex-nowrap lg:py-16">
             {stats.map((stat, i) => (
@@ -191,6 +195,6 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }

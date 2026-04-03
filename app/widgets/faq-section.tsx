@@ -44,12 +44,12 @@ const faqData = [
 
 export default function FAQSection() {
   return (
-    <section className="bg-neutral-100 px-6 py-24 md:px-16">
-      <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-2">
+    <section className="bg-accent px-6 py-24 md:px-16">
+      <div className="mx-auto flex max-w-7xl justify-between gap-16">
         {/* Left Side */}
         <div>
           <FadeIn>
-            <h2 className="heading-1">
+            <h2 className="heading-2">
               Your Questions,
               <br />
               Answered
@@ -61,7 +61,7 @@ export default function FAQSection() {
 
         {/* Right Side - Accordion */}
         <FadeIn delay={0.4}>
-          <div>
+          <div className="max-w-xl xl:w-xl">
             <Accordion type="single" collapsible className="space-y-4">
               {faqData.map((item) => (
                 <AccordionItem

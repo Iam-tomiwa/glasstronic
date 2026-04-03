@@ -7,16 +7,18 @@ import SectionLabel from "@/components/section-label"
 import FadeIn from "@/components/animations/fade-in"
 
 const services = [
-  { title: "Glass cutting", image: "/images/services.png" },
-  { title: "Glass Drilling", image: "/images/services.png" },
-  { title: "CNC machining", image: "/images/services.png" },
-  { title: "Edge grinding & polishing", image: "/images/services.png" },
-  { title: "Double glazing", image: "/images/services.png" },
-  { title: "CNC Glass Engraving", image: "/images/services.png" },
-  { title: "Glass Washing", image: "/images/services.png" },
-  { title: "Glass Tempering", image: "/images/services.png" },
-  { title: "Glass Lamination", image: "/images/services.png" },
-  { title: "Glass Sealing", image: "/images/services.png" },
+  { title: "Glass cutting", image: "/images/cutting-shaping.png" },
+  {
+    title: "Edge & surface finishing",
+    image: "/images/edging-surface-finish.png",
+  },
+  {
+    title: "Fabrication & Processing",
+    image: "/images/fabrication-processing.png",
+  },
+  { title: "Strength & Insulation", image: "/images/strength-insulation.png" },
+  { title: "Hardware", image: "/images/hardware.png" },
+  { title: "Assembly", image: "/images/assembly.png" },
 ]
 
 // Left/Right edge of the 1400px container (px-6 = 1.5rem)
@@ -38,11 +40,11 @@ export default function ServicesCarousel() {
   }, [emblaApi])
 
   return (
-    <section className="overflow-hidden bg-white py-20" id="services">
+    <section className="overflow-hidden bg-white py-30" id="services">
       {/* Header */}
       <div className="mx-auto mb-14 max-w-[1400px] px-6 text-center">
         <FadeIn>
-          <h2 className="heading-1">
+          <h2 className="heading-2">
             Complete Glass
             <br />
             Processing Solutions
@@ -119,10 +121,10 @@ export default function ServicesCarousel() {
           </div>
 
           {/* Progress track */}
-          <div className="relative h-[3px] max-w-[600px] flex-1 bg-gray-200">
+          <div className="relative h-[4px] max-w-[600px] flex-1 bg-gray-200">
             <div
-              className="absolute inset-y-0 left-0 bg-green-900"
-              style={{ width: `${progress * 100}%` }}
+              className="absolute inset-y-0 left-0 h-[5px] bg-green-900"
+              style={{ width: `calc(${progress * 100}% + 20px)` }}
             />
           </div>
         </div>

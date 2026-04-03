@@ -101,7 +101,7 @@
   --secondary-foreground: oklch(98.505% 0.00004 271.152);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(97.015% 0.00011 271.152);
+  --accent: oklch(98.089% 0.0026 230.444);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
@@ -173,4 +173,19 @@ html.lenis body {
   margin-bottom: 1rem;
 
   @apply text-4xl sm:text-6xl;
+}
+
+.heading-2 {
+  font-weight: 500;
+  font-style: Medium;
+  line-height: 100%;
+  letter-spacing: -1.9px;
+  margin-bottom: 1rem;
+  font-size: 48px;
+}
+
+@media (max-width: 768px) {
+  .heading-2 {
+    font-size: 30px;
+  }
 }

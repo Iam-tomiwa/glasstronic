@@ -41,7 +41,7 @@ export default function ProjectsSection() {
       <div className="container">
         {/* Header */}
         <div className="mb-12">
-          <h2 className="heading-1">Built for Every Sector</h2>
+          <h2 className="heading-2">Built for Every Sector</h2>
 
           <SectionLabel
             label="Our Projects"
