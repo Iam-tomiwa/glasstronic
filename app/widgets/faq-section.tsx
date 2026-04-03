@@ -45,7 +45,7 @@ const faqData = [
 export default function FAQSection() {
   return (
     <section className="bg-accent px-6 py-24 md:px-16">
-      <div className="mx-auto flex max-w-7xl justify-between gap-16">
+      <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:gap-16">
         {/* Left Side */}
         <div>
           <FadeIn>
