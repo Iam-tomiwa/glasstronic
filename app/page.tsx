@@ -4,6 +4,8 @@ import AboutSection from "@/app/widgets/about"
 import WhyGlassTronic from "./widgets/feature-section"
 import ServicesCarousel from "./widgets/services-section"
 import LayersSection from "./widgets/layers-section"
+import ProcessSection from "./widgets/process-section"
+import ContactSection from "./widgets/contact-section"
 import Footer from "@/components/footer"
 import FAQSection from "./widgets/faq-section"
 
@@ -18,6 +20,8 @@ export default function Page() {
       <ServicesCarousel />
       <LayersSection />
       <FAQSection />
+      <ProcessSection />
+      <ContactSection />
       <Footer />
     </main>
   )

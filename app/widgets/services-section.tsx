@@ -22,7 +22,7 @@ const services = [
 ]
 
 // Left/Right edge of the 1400px container (px-6 = 1.5rem)
-const CONTAINER_SIDE_PADDING = "max(1.5rem, calc((100vw - 1400px) / 2))"
+export const CONTAINER_SIDE_PADDING = "max(1.5rem, calc((100vw - 1400px) / 2))"
 
 export default function ServicesCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: false })

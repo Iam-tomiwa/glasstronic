@@ -1,9 +1,11 @@
-import Image from "next/image"
+"use client"
+
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-100 pt-0 pb-12">
+    <footer className="relative overflow-hidden bg-accent pt-24 pb-12">
       {/* Background Watermark */}
       <div
         className="pointer-events-none -mb-8 w-full overflow-hidden select-none"
@@ -28,45 +30,107 @@ export default function Footer() {
       </div>
 
       <div className="relative container">
-        {/* Top Row */}
-        <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
-          {/* Logo */}
-          <Link href="/" className="shrink-0">
-            <Image
-              src="/images/logo.svg"
-              alt="Glasstronic"
-              width={170}
-              height={40}
-              priority
-            />
-          </Link>
-
-          {/* Links */}
-          <div className="grid grid-cols-3 gap-12 text-sm">
-            <div>
-              <h4 className="mb-4 font-medium">Company</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>Services</li>
-                <li>Portfolio</li>
-                <li>FAQs</li>
-              </ul>
+        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {/* Column 1: Logo */}
+          <div className="flex items-center gap-2.5">
+            <div className="h-10 w-10">
+              <svg
+                viewBox="0 0 36.5 30.5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-full w-full"
+              >
+                <path
+                  d="M12.7863 21.2178H18.9889C18.9697 23.7456 16.892 25.7908 14.3278 25.7908H9.324C6.74836 25.7908 4.66103 23.7283 4.66103 21.1814V14.4963C4.66103 11.9513 6.74836 9.88692 9.324 9.88692H10.1915V5.27758H4.66295C2.08731 5.27758 0 7.34001 0 9.88692V25.7888C0 28.3338 2.08731 30.3982 4.66295 30.3982H18.9908C21.5664 30.3982 23.6537 28.3358 23.6537 25.7888V16.6066H12.7863V21.2159V21.2178Z"
+                  fill="#0B4C3E"
+                />
+                <path
+                  d="M31.7777 0H17.4499C14.8743 0 12.7869 2.06243 12.7869 4.60934V13.7916H23.6544V9.18229H17.4518C17.471 6.65452 19.5487 4.60934 22.1128 4.60934H27.1167C29.6923 4.60934 31.7796 6.67176 31.7796 9.21867V15.9038C31.7796 18.4488 29.6923 20.5132 27.1167 20.5132H26.2492V25.1225H31.7796C34.3553 25.1225 36.4426 23.0601 36.4426 20.5132V4.61125C36.4426 2.06625 34.3553 0.00191684 31.7796 0.00191684L31.7777 0Z"
+                  fill="#0B4C3E"
+                />
+              </svg>
             </div>
+            <span className="text-2xl font-bold tracking-tight text-[#0B4C3E]">
+              Glasstronic
+            </span>
+          </div>
 
+          {/* Column 2: Head Office */}
+          <div className="space-y-6">
             <div>
-              <h4 className="mb-4 font-medium">Legal</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>Terms</li>
-                <li>Privacy</li>
-              </ul>
+              <h4 className="mb-3 font-bold text-primary">
+                Glasstronic Technologies Head Office
+              </h4>
+              <p className="max-w-[280px] text-[13px] leading-relaxed text-[#171717]">
+                1 Adeyemi Bero Crescent off Anthony Oshodi Expressway by Total
+                Filling Station Ilupeju
+              </p>
             </div>
+            <Button
+              asChild
+              variant="outline"
+              size={"sm"}
+              className="bg-transparent text-[#171717] ring-1 ring-border"
+            >
+              <Link href={"#contact"}> Contact Us</Link>
+            </Button>
+          </div>
 
-            <div>
-              <h4 className="mb-4 font-medium">Connect</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li>X (Twitter)</li>
-                <li>Instagram</li>
-                <li>Facebook</li>
-              </ul>
+          {/* Column 3: Contact Us */}
+          <div>
+            <h4 className="mb-4 font-bold text-primary">Contact Us</h4>
+            <div className="space-y-2 text-sm font-medium text-[#171717]">
+              <p>+234 201 906 3200</p>
+              <p>+234 201 906 3206</p>
+            </div>
+          </div>
+
+          {/* Column 4: Socials */}
+          <div className="lg:pl-8">
+            <h4 className="mb-4 font-bold text-primary">Socials</h4>
+            <div className="flex gap-3">
+              <Link
+                href="#"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0D2E27] p-2.5 text-white transition-colors hover:bg-primary"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-full w-full"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </Link>
+              <Link
+                href="#"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0D2E27] p-2.5 text-white transition-colors hover:bg-primary"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-full w-full"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </Link>
+              <Link
+                href="#"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0D2E27] p-2.5 text-white transition-colors hover:bg-primary"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-full w-full"
+                >
+                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>

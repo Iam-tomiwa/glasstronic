@@ -11,6 +11,7 @@ interface FadeInProps {
   direction?: "up" | "down" | "left" | "right"
   stagger?: boolean
   staggerDelay?: number
+  threshold?: number
 }
 
 const getDirectionOffset = (direction: FadeInProps["direction"]) => {
@@ -35,6 +36,7 @@ const FadeIn = ({
   direction = "up",
   stagger = false,
   staggerDelay = 0.4,
+  threshold = 0,
 }: FadeInProps) => {
   const [hasEntered, setHasEntered] = useState(false)
 
@@ -75,7 +77,8 @@ const FadeIn = ({
       initial="hidden"
       animate={hasEntered ? "show" : "hidden"}
       viewport={{
-        margin: "-10% 0px",
+        margin: threshold ? undefined : "-10% 0px",
+        amount: threshold,
         once: false,
       }}
       onViewportEnter={() => setHasEntered(true)}
