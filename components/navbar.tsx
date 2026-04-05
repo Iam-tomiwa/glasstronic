@@ -12,7 +12,7 @@ const navLinks = [
   { label: "HOME", href: "#" },
   { label: "ABOUT US", href: "#about" },
   { label: "SERVICES", href: "#services" },
-  { label: "PORTFOLIO", href: "#portfolio" },
+  // { label: "PORTFOLIO", href: "#portfolio" },
 ]
 
 export default function Navbar() {
