@@ -77,6 +77,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Button
             size="lg"
+            asChild
             className={cn(
               "px-8 text-[11px] transition-all duration-500",
               !scrolled
@@ -84,7 +85,7 @@ export default function Navbar() {
                 : "bg-primary text-white hover:bg-primary/90"
             )}
           >
-            CONTACT US
+            <a href={"#contact"}>CONTACT US</a>
           </Button>
         </div>
 
@@ -123,8 +124,12 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button size="lg" className="mt-4 w-full text-xs tracking-widest">
-                CONTACT US
+              <Button
+                asChild
+                size="lg"
+                className="mt-4 w-full text-xs tracking-widest"
+              >
+                <a href={"#contact"}>CONTACT US</a>
               </Button>
             </div>
           </motion.div>

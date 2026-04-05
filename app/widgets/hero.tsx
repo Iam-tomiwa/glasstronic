@@ -150,7 +150,7 @@ export default function HeroSection() {
                 asChild
                 className="bg-white px-10 text-[10px] font-bold tracking-[0.2em] text-black hover:bg-primary hover:text-white"
               >
-                <Link href="/contact">CONTACT US</Link>
+                <a href="#contact">CONTACT US</a>
               </Button>
             </motion.div>
           </div>

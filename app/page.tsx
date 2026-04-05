@@ -19,8 +19,8 @@ export default function Page() {
       {/* <ProjectsSection /> */}
       <ServicesCarousel />
       <LayersSection />
-      <FAQSection />
       <ProcessSection />
+      <FAQSection />
       <ContactSection />
       <Footer />
     </main>

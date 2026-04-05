@@ -127,7 +127,7 @@ function StepItem({
         </motion.div>
 
         <div className="flex-1 pt-1">
-          <h3 className="mb-2 flex flex-wrap text-xl leading-tight font-semibold tracking-tight">
+          <h3 className="mb-2 flex flex-wrap text-xl leading-tight font-medium tracking-tight">
             {titleWords.map((word, i) => (
               <SyncedWord
                 key={`title-${i}`}
@@ -141,7 +141,7 @@ function StepItem({
               />
             ))}
           </h3>
-          <p className="flex max-w-[480px] flex-wrap text-[17px] leading-relaxed font-medium">
+          <p className="flex max-w-[480px] flex-wrap text-[17px] leading-relaxed">
             {descWords.map((word, i) => (
               <SyncedWord
                 key={`desc-${i}`}
@@ -179,10 +179,7 @@ function NBNote() {
   const nbWords = useMemo(() => nbText.split(" "), [nbText])
 
   return (
-    <div
-      ref={containerRef}
-      className="text-[17px] leading-relaxed font-medium md:mt-6"
-    >
+    <div ref={containerRef} className="text-[17px] leading-relaxed md:mt-6">
       <span className="mr-2 font-bold">NB:</span>
       <div className="inline flex-wrap">
         {nbWords.map((word, i) => (
@@ -213,30 +210,21 @@ export default function ProcessSection() {
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
 
-  const { scrollYProgress: rawProgress } = useScroll({
+  const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   })
 
-  const scrollYProgress = useSpring(rawProgress, {
-    stiffness: 120,
-    damping: 30,
-    restDelta: 0.001,
-  })
-
-  const imageY = useTransform(scrollYProgress, [0, 1], ["35%", "-135%"])
+  const imageTranslateY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
   const imageOpacity = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0.8, 1, 1, 0.9]
+    [0, 0.1, 0.9, 1],
+    [0.4, 1, 1, 0.4]
   )
 
   return (
-    <div
-      ref={sectionRef}
-      className="relative overflow-hidden bg-white py-24 pb-12 md:pt-32"
-    >
-      <div className="flex flex-col items-end lg:flex-row">
+    <div ref={sectionRef} className="relative bg-white py-24 pb-12 md:pt-32">
+      <div className="flex flex-col items-start lg:flex-row">
         {/* Left Content Area: Uses dynamic padding to match site layout */}
         <div
           className="flex flex-col lg:w-1/2"
@@ -266,24 +254,34 @@ export default function ProcessSection() {
           </div>
         </div>
 
-        {/* Right Area: Decorative Parallax Image - Touching edge on desktop, fade in on mobile */}
-        <div className="relative mt-16 min-h-[400px] w-full flex-1 lg:mt-0 lg:w-auto">
-          <FadeIn direction="up" delay={0.2} threshold={0.2}>
-            <motion.div
-              style={{ y: isMobile ? 0 : imageY, opacity: imageOpacity }}
-              className="relative"
+        {/* Right Area: Touching edge on desktop, sticky behavior */}
+        <div className="relative mt-16 w-full flex-1 lg:mt-0 lg:w-auto">
+          <div className="lg:sticky lg:top-32 lg:flex lg:h-[calc(100vh-8rem)] lg:items-center">
+            <FadeIn
+              direction="up"
+              delay={0.2}
+              threshold={0.1}
+              className="w-full"
             >
-              <Image
-                src="/images/process-glass-left.png"
-                alt="Glass processing perfection"
-                width={720}
-                height={640}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="min-h-[400px] w-full"
-                priority
-              />
-            </motion.div>
-          </FadeIn>
+              <motion.div
+                style={{
+                  y: isMobile ? 0 : imageTranslateY,
+                  opacity: imageOpacity,
+                }}
+                className="relative overflow-hidden"
+              >
+                <Image
+                  src="/images/process-glass-left.png"
+                  alt="Glass processing perfection"
+                  width={720}
+                  height={800}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="h-auto w-full object-cover"
+                  priority
+                />
+              </motion.div>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </div>

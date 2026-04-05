@@ -57,9 +57,14 @@ export default function LayersSection() {
             Built in Layers. <br /> Defined by Precision.
           </h1>
           <SectionLabel
-            label="The artistry of glass processing"
+            label="SEAMLESS EXECUTION"
             className="mx-auto mt-4 text-center text-base tracking-widest sm:text-lg"
           />
+          <p className="mx-auto mt-4 max-w-[750px] text-center text-xl">
+            Every project follows a structured process and every layer is
+            processed with precision, ensuring seamless performance from
+            fabrication to final installation.
+          </p>
 
           <div className="mt-6">
             <Button className="uppercase">Contact Us</Button>
