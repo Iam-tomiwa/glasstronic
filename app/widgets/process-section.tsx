@@ -109,7 +109,7 @@ function StepItem({
   const numberOpacity = useTransform(progress, [0, 0.15], [0.4, 1])
 
   return (
-    <div ref={containerRef} className="relative pb-10 last:pb-0">
+    <div id="process" ref={containerRef} className="relative pb-10 last:pb-0">
       {!isLast && (
         <div className="absolute top-10 bottom-10 left-[19px] w-px border-l border-dashed border-[#0B4C3E]/20" />
       )}
