@@ -12,33 +12,57 @@ import {
 const faqData = [
   {
     value: "item-1",
-    question: "What glass solutions does Glasstronic offer?",
-    answer:
-      "Glasstronic provides a wide range of architectural glass solutions including laminated, tempered, and insulated systems.",
+    question: "WHERE IS GLASSTRONIC TECHNOLOGIES LOCATED?",
+    answer: `GTL is strategicaly located in the heart of Lagos at the
+Ilupeju Industrial Estate. Our central location alows us to
+efficiently serve both the Mainland and Island markets,
+ensuring faster delivery times and easier site visits for
+our clients.`,
   },
   {
     value: "item-2",
-    question: "Does Glasstronic offer custom glass solutions?",
-    answer:
-      "Yes! Glasstronic offers custom glass solutions tailored to your project's specifications.",
+    question: "WHAT DOES GLASSTRONIC TECHNOLOGIES DO?",
+    answer: `We are a premium glass processing company
+specializing in high-quality architectural and
+functional glass. We use advanced technology and
+precise craftsmanship to process glass that is safe,
+beautiful, and durable.`,
   },
   {
     value: "item-3",
-    question: "Does Glasstronic offer on-site consultations?",
-    answer:
-      "Yes, on-site consultations are available to better understand your project requirements.",
+    question: "WHAT CAN I EXPECT WHEN WORKING WITH GLASSTRONIC TECHNOLOGIES?",
+    answer: `At GTL, our operations are built on integrity, transparency, and
+accountability. We carry our clients along through the glass process,
+ensuring that every solution is tailored specificaly to your unique
+project needs.`,
   },
   {
     value: "item-4",
-    question: "Where can I see examples of Glasstronic's work?",
-    answer:
-      "You can explore our portfolio section to view completed projects and case studies.",
+    question: "WHO ARE WE?",
+    answer: `GTL is a forward-thinking glass processing company delivering
+high-quality, innovative solutions across diverse applications.
+With a focus on precision, durability, and refined design, we
+create glass products that enhance safety and elevate
+experiences. Built on integrity and reliability, we take our clients
+requests and process them to meet their unique needs. Our goal
+is to out pace legacy leaders in Nigeria and across Africa.`,
   },
   {
     value: "item-5",
-    question: "What is Glasstronic's typical project timeline?",
-    answer:
-      "Timelines vary depending on scope, but most projects range from a few weeks to several months.",
+    question: "WHAT DO WE DO?",
+    answer: `At GTL, we ofer various glass processing solutions from
+toughening, tempering, washing, laminating to peculiar
+glass designs, as wel as cuting and making timely
+delivery to you. Our glass has been engineered for
+strength, safety, and refined finishing.`,
+  },
+  {
+    value: "item-6",
+    question: "WHAT DO WE OFFER?",
+    answer: `At GTL, we ofer precision-driven services including glass
+cuting, polishing, custom fabrication, and professional
+instalation ensuring every project is executed with
+accuracy, durability, and atention to detail.`,
   },
 ]
 

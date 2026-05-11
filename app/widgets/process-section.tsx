@@ -215,15 +215,18 @@ export default function ProcessSection() {
     offset: ["start start", "end end"],
   })
 
-  const imageTranslateY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
+  const imageTranslateY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"])
   const imageOpacity = useTransform(
     scrollYProgress,
     [0, 0.1, 0.9, 1],
-    [0.4, 1, 1, 0.4]
+    [0.7, 1, 1, 0.7]
   )
 
   return (
-    <div ref={sectionRef} className="relative bg-white py-24 pb-12 md:pt-32">
+    <div
+      ref={sectionRef}
+      className="relative bg-white py-24 pb-12 md:pt-32 2xl:overflow-hidden"
+    >
       <div className="flex flex-col items-start lg:flex-row">
         {/* Left Content Area: Uses dynamic padding to match site layout */}
         <div
@@ -255,8 +258,8 @@ export default function ProcessSection() {
         </div>
 
         {/* Right Area: Touching edge on desktop, sticky behavior */}
-        <div className="relative mt-16 w-full flex-1 lg:mt-0 lg:w-auto">
-          <div className="lg:sticky lg:top-32 lg:flex lg:h-[calc(100vh-8rem)] lg:items-center">
+        <div className="relative mt-16 w-full flex-1 lg:top-16 lg:mt-0 lg:w-auto">
+          <div className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:items-start lg:pt-32 2xl:pt-40">
             <FadeIn
               direction="up"
               delay={0.2}
