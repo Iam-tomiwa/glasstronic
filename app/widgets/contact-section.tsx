@@ -53,10 +53,10 @@ export default function ContactSection() {
                   Email Address
                 </p>
                 <a
-                  href="mailto:glasstronictech@gmail.com"
+                  href="mailto:info@glasstronictech.org"
                   className="text-primary/80"
                 >
-                  glasstronictech@gmail.com
+                  info@glasstronictech.org
                 </a>
               </div>
             </div>

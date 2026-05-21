@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 const slides = [
-  "/images/hero-1.png",
-  "/images/hero-2.png",
-  "/images/hero-3.png",
-  "/images/hero-4.png",
-  "/images/hero-5.png",
+  "/images/header-1.png",
+  "/images/header-2.png",
+  "/images/header-3.png",
+  "/images/header-4.png",
+  "/images/header-5.png",
 ]
 
 const stats = [

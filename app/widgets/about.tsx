@@ -13,7 +13,7 @@ export default function AboutSection() {
           <div className="min-w-[40%]">
             <FadeIn delay={0.2} className="relative order-2 lg:order-1">
               <Image
-                src={"/images/about-us.png"}
+                src={"/images/about.png"}
                 width={500}
                 height={500}
                 alt="About Us"
