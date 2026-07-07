@@ -42,9 +42,19 @@ export default function ContactSection() {
                 <p className="text-xl font-semibold text-primary">
                   Telephone Line
                 </p>
-                <p className="text-primary/80">
-                  <a href="tel:+2342019063200">+234 201 906 3200</a>,{" "}
-                  <a href="tel:+2342019063206">+234 201 906 3206</a>
+                <p className="flex flex-wrap gap-2 text-primary/80">
+                  <a href="tel:+2348151941123" className="hover:underline">
+                    08151941123,
+                  </a>
+                  <a href="tel:+2348151943184" className="hover:underline">
+                    08151943184,
+                  </a>
+                  <a href="tel:+2348151938258" className="hover:underline">
+                    08151938258,
+                  </a>
+                  <a href="tel:+2348151940448" className="hover:underline">
+                    08151940448
+                  </a>
                 </p>
               </div>
 

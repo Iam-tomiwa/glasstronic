@@ -79,9 +79,19 @@ export default function Footer() {
           {/* Column 3: Contact Us */}
           <div>
             <h4 className="mb-4 font-bold text-primary">Contact Us</h4>
-            <div className="space-y-2 text-sm font-medium text-[#171717]">
-              <p>+234 201 906 3200</p>
-              <p>+234 201 906 3206</p>
+            <div className="flex flex-wrap gap-2 text-sm font-medium text-[#171717]">
+              <a href="tel:+2348151941123" className="hover:underline">
+                08151941123,
+              </a>
+              <a href="tel:+2348151943184" className="hover:underline">
+                08151943184,
+              </a>
+              <a href="tel:+2348151938258" className="hover:underline">
+                08151938258,
+              </a>
+              <a href="tel:+2348151940448" className="hover:underline">
+                08151940448
+              </a>
             </div>
           </div>
 
